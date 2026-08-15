@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOTech Club - Smt. Indira Gandhi College Of Engineering</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyberDark: '#080d1a',
+                        cyberCard: '#0f172a',
+                        neonCyan: '#00f2fe',
+                        neonBlue: '#4facfe',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-cyberDark text-slate-100 font-sans min-h-screen flex flex-col selection:bg-neonCyan selection:text-black">
+
+    <!-- Top College Banner -->
+    <header class="bg-white py-2 px-4 shadow-md text-center border-b border-gray-200">
+        <div class="max-w-7xl mx-auto flex items-center justify-center">
+            <!-- COLLEGE BANNER -->
+            <img src="images/college-banner.png" alt="Smt. Indira Gandhi College of Engineering" class="h-16 md:h-20 object-contain mx-auto">
+        </div>
+    </header>
+
+    <!-- Main Dynamic Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-cyberDark/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                
+                <!-- Logo & Brand in Navigation Bar -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
+                    <img src="images/logo.png" alt="IOTECH Logo" class="h-20 w-100 object-contain">
+                </div>
+
+                <!-- Desktop Navigation Bar -->
+                <div class="hidden md:flex space-x-1">
+                    <button onclick="switchPage('home')" id="nav-home" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all">Home</button>
+                    <button onclick="switchPage('events')" id="nav-events" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all">Events</button>
+                    <button onclick="switchPage('management')" id="nav-management" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all">Management</button>
+                    <button onclick="switchPage('technical')" id="nav-technical" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all">Technical</button>
+                    <button onclick="switchPage('design')" id="nav-design" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all">Design</button>
+                    <button onclick="switchPage('documentation')" id="nav-documentation" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all">Documentation</button>
+                    <button onclick="switchPage('media')" id="nav-media" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all">Media</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cyberCard border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+            <button onclick="switchPage('home')" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-neonCyan">Home</button>
+            <button onclick="switchPage('events')" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-neonCyan">Events</button>
+            <button onclick="switchPage('management')" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-neonCyan">Management</button>
+            <button onclick="switchPage('technical')" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-neonCyan">Technical</button>
+            <button onclick="switchPage('design')" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-neonCyan">Design</button>
+            <button onclick="switchPage('documentation')" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-neonCyan">Documentation</button>
+            <button onclick="switchPage('media')" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-neonCyan">Media</button>
+        </div>
+    </nav>
+
+    <!-- Content Sections Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- ================= HOME PAGE ================= -->
+        <section id="page-home" class="page-content space-y-16">
+            <!-- Hero Banner -->
+            <div class="text-center py-16 px-6 bg-gradient-to-b from-slate-900/80 to-cyberDark rounded-3xl border border-slate-800/80 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-neonCyan/10 to-neonBlue/10 opacity-30 pointer-events-none"></div>
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
+                    Welcome to <span class="bg-gradient-to-r from-neonCyan to-neonBlue bg-clip-text text-transparent">IOTech</span>
+                </h1>
+                <p class="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl font-light mb-8 italic">
+                    -Something Starts Here.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="scrollToDepartments()" class="px-6 py-3 rounded-full bg-gradient-to-r from-neonCyan to-neonBlue text-cyberDark font-bold hover:shadow-[0_0_20px_rgba(0,242,254,0.4)] transition-all">Explore Departments</button>
+                    <button onclick="scrollToCoreTeam()" class="px-6 py-3 rounded-full border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-200 font-semibold transition-all">Meet the Team</button>
+                </div>
+            </div>
+
+            <!-- Core Team Section -->
+            <div id="core-team-section">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-white mb-2">Core Leadership</h2>
+                    <p class="text-slate-400">The team steering IOTech toward its next big milestone.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/charan.png" alt="Charan R. Shetty" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Charan R. Shetty</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">President</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/kedar.png" alt="Kedar Guruv" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Kedar Guruv</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Vice President</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/ult boss.png" alt="Parth M. Narse" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Parth M. Narse</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Technical Lead</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/kshitija.png" alt="Kshitija Khilari" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Kshitija Khilari</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Technical Lead</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/nidhee.png" alt="Nidhee Jadhav" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Nidhee Jadhav</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Management Lead</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/bhagyesh.png" alt="Bhagyesh Joshi" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Bhagyesh Joshi</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Management Co-Lead</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/chinmay.png" alt="Chinmay Chiplunkar" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Chinmay Chiplunkar</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Media Lead</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/payal.png" alt="Payal Hasbe" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Payal Hasbe</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Media Lead</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/aditya.png" alt="Aditya Shirke" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Aditya Shirke</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Documentation Lead</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/anushka.png" alt="Anushka Sonawane" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Anushka Sonawane</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Documentation Co-Lead</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/komal.png" alt="Komal Shrike" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Komal Shrike</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Design Lead</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/purva.png" alt="Purva Agiter" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Purva Agiter</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Design Co-Lead</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faculty Section -->
+            <div id="Faculty">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-white mb-2">Club Faculty</h2>
+                    <p class="text-slate-400">The faculty members guiding our club.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/HOD.jpg" alt="Dr. Madhu Nashipudi" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Dr. Madhu Nashipudi</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">HOD Of IOT</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="images/members/sarita.jpg" alt="Sarita Bopalkar" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">Mrs. Sarita M. Bopalkar</h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Faculty Advisor</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Departments Cards Grid -->
+            <div id="departments-section">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-white mb-2">Our Departments</h2>
+                    <p class="text-slate-400">Click any department to explore its team and domain details.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div onclick="switchPage('management')" class="cursor-pointer bg-cyberCard border border-slate-800 rounded-2xl p-6 hover:border-neonCyan/60 hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-neonCyan/10 text-neonCyan flex items-center justify-center mb-4 text-xl group-hover:bg-neonCyan group-hover:text-cyberDark transition-all">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Management</h3>
+                        <p class="text-slate-400 text-sm">Leadership, event planning, operations, and club administration.</p>
+                    </div>
+
+                    <div onclick="switchPage('technical')" class="cursor-pointer bg-cyberCard border border-slate-800 rounded-2xl p-6 hover:border-neonCyan/60 hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-neonCyan/10 text-neonCyan flex items-center justify-center mb-4 text-xl group-hover:bg-neonCyan group-hover:text-cyberDark transition-all">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Technical</h3>
+                        <p class="text-slate-400 text-sm">Hardware engineering, IoT integration, software dev, and workshops.</p>
+                    </div>
+
+                    <div onclick="switchPage('design')" class="cursor-pointer bg-cyberCard border border-slate-800 rounded-2xl p-6 hover:border-neonCyan/60 hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-neonCyan/10 text-neonCyan flex items-center justify-center mb-4 text-xl group-hover:bg-neonCyan group-hover:text-cyberDark transition-all">
+                            <i class="fa-solid fa-pen-nib"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Design</h3>
+                        <p class="text-slate-400 text-sm">Visual identity, UI/UX conceptualization, posters, and creative assets.</p>
+                    </div>
+
+                    <div onclick="switchPage('documentation')" class="cursor-pointer bg-cyberCard border border-slate-800 rounded-2xl p-6 hover:border-neonCyan/60 hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-neonCyan/10 text-neonCyan flex items-center justify-center mb-4 text-xl group-hover:bg-neonCyan group-hover:text-cyberDark transition-all">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Documentation</h3>
+                        <p class="text-slate-400 text-sm">Event records, project reports, official content, and knowledge bases.</p>
+                    </div>
+
+                    <div onclick="switchPage('media')" class="cursor-pointer bg-cyberCard border border-slate-800 rounded-2xl p-6 hover:border-neonCyan/60 hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-neonCyan/10 text-neonCyan flex items-center justify-center mb-4 text-xl group-hover:bg-neonCyan group-hover:text-cyberDark transition-all">
+                            <i class="fa-solid fa-photo-film"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Media</h3>
+                        <p class="text-slate-400 text-sm">Social media, video coverage, outreach campaigns, and photography.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EVENTS PAGE ================= -->
+        <section id="page-events" class="page-content hidden space-y-12">
+            <!-- Header Banner -->
+            <div class="relative bg-gradient-to-r from-slate-900 via-cyberCard to-slate-900 border border-slate-800 rounded-3xl p-8 overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-neonCyan/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative z-10">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-neonCyan bg-neonCyan/10 border border-neonCyan/30 px-3 py-1 rounded-full mb-3">
+                            <i class="fa-solid fa-fire text-amber-400"></i> Upcoming Flagship Event
+                        </span>
+                        <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Tech Clash: The Tech Debate</h1>
+                        <p class="text-slate-400 mt-2 max-w-xl text-sm md:text-base">
+                            Clash of ideas, tech ethics, and future innovations. Voice your arguments!
+                        </p>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScoLlzsMdnrZlsVusE9nBdiqPuaXINfKH1R69LPa6ILFr8e4A/viewform?usp=sharing&ouid=116021410510104350096" target="_blank" class="px-6 py-3 rounded-full bg-gradient-to-r from-neonCyan to-neonBlue text-cyberDark font-bold hover:shadow-[0_0_20px_rgba(0,242,254,0.4)] transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-pen-to-square"></i> Register Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Event Details Card -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 space-y-4">
+                        <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-bullhorn text-neonCyan"></i> About the Competition
+                        </h2>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            IOTECH Club presents <strong>Tech Clash 2026</strong> — an inter-departmental debate competition designed to test your critical thinking, technical knowledge, and persuasion skills.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 space-y-4">
+                        <h3 class="text-lg font-bold text-white border-b border-slate-800 pb-3">Event Details</h3>
+                        <div class="space-y-4 text-xs">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-neonCyan/10 text-neonCyan flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-calendar-day"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-slate-400 font-medium">Date & Time</span>
+                                    <span class="text-white font-semibold">To Be Announced</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-neonCyan/10 text-neonCyan flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-slate-400 font-medium">Venue</span>
+                                    <span class="text-white font-semibold">Seminar Hall, SIGCE Campus</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-neonCyan/10 text-neonCyan flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-user-group"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-slate-400 font-medium">Team Format</span>
+                                    <span class="text-white font-semibold">10 vs 10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= MANAGEMENT PAGE ================= -->
+        <section id="page-management" class="page-content hidden space-y-8">
+            <div class="border-b border-slate-800 pb-6">
+                <h1 class="text-3xl font-extrabold text-white">Management Department</h1>
+                <p class="text-slate-400 mt-2">Drives operations, coordinates logistics, and ensures seamless execution across all club initiatives.</p>
+            </div>
+            
+            <h2 class="text-xl font-bold text-neonCyan">Department Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-cyberCard border border-slate-800 rounded-xl p-5 text-center">
+                    <img src="images/members/nidhee.png" alt="Nidhee S. Jadhav" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">Nidhee S. Jadhav</h3>
+                    <p class="text-xs text-neonCyan mt-1">Management Lead</p>
+                </div>
+                <div class="bg-cyberCard border border-slate-800 rounded-xl p-5 text-center">
+                    <img src="images/members/bhagyesh.png" alt="Bhagyesh Joshi" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">Bhagyesh Joshi</h3>
+                    <p class="text-xs text-neonCyan mt-1">Management Co-Lead</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TECHNICAL PAGE ================= -->
+        <section id="page-technical" class="page-content hidden space-y-8">
+            <div class="border-b border-slate-800 pb-6">
+                <h1 class="text-3xl font-extrabold text-white">Technical Department</h1>
+                <p class="text-slate-400 mt-2">Architects hardware, IoT systems, embedded code, and technical projects for the college.</p>
+            </div>
+
+            <h2 class="text-xl font-bold text-neonCyan">Department Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-cyberCard border border-slate-800 rounded-xl p-5 text-center">
+                    <img src="images/members/ult boss.png" alt="Parth M. Narse" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">Parth M. Narse</h3>
+                    <p class="text-xs text-neonCyan mt-1">Technical Lead</p>
+                </div>
+                <div class="bg-cyberCard border border-slate-800 rounded-xl p-5 text-center">
+                    <img src="images/members/kshitija.png" alt="Kshitija Khilari" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">Kshitija Khilari</h3>
+                    <p class="text-xs text-neonCyan mt-1">Technical Lead</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= DESIGN PAGE ================= -->
+        <section id="page-design" class="page-content hidden space-y-8">
+            <div class="border-b border-slate-800 pb-6">
+                <h1 class="text-3xl font-extrabold text-white">Design Department</h1>
+                <p class="text-slate-400 mt-2">Crafts user experiences, UI/UX mockups, visual identity, and brand assets.</p>
+            </div>
+
+            <h2 class="text-xl font-bold text-neonCyan">Department Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-cyberCard border border-slate-800 rounded-xl p-5 text-center">
+                    <img src="images/members/komal.png" alt="Komal Shrike" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">Komal Shrike</h3>
+                    <p class="text-xs text-neonCyan mt-1">Design Lead</p>
+                </div>
+                <div class="bg-cyberCard border border-slate-800 rounded-xl p-5 text-center">
+                    <img src="images/members/purva.png" alt="Purva Atigre" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">Purva Atigre</h3>
+                    <p class="text-xs text-neonCyan mt-1">Design Co-Lead</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= DOCUMENTATION PAGE ================= -->
+        <section id="page-documentation" class="page-content hidden space-y-8">
+            <div class="border-b border-slate-800 pb-6">
+                <h1 class="text-3xl font-extrabold text-white">Documentation Department</h1>
+                <p class="text-slate-400 mt-2">Maintains official club records, generates reports, and writes project specifications.</p>
+            </div>
+
+            <h2 class="text-xl font-bold text-neonCyan">Department Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-cyberCard border border-slate-800 rounded-xl p-5 text-center">
+                    <img src="images/members/aditya.png" alt="Aditya Shirke" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">Aditya Shirke</h3>
+                    <p class="text-xs text-neonCyan mt-1">Documentation Lead</p>
+                </div>
+                <div class="bg-cyberCard border border-slate-800 rounded-xl p-5 text-center">
+                    <img src="images/members/anushka.png" alt="Anushka Sonawane" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">Anushka Sonawane</h3>
+                    <p class="text-xs text-neonCyan mt-1">Documentation Co-Lead</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= MEDIA PAGE ================= -->
+        <section id="page-media" class="page-content hidden space-y-8">
+            <div class="border-b border-slate-800 pb-6">
+                <h1 class="text-3xl font-extrabold text-white">Media & Outreach Department</h1>
+                <p class="text-slate-400 mt-2">Manages social media presence, promotional videos, event coverage, and public relations.</p>
+            </div>
+
+            <h2 class="text-xl font-bold text-neonCyan">Department Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-cyberCard border border-slate-800 rounded-xl p-5 text-center">
+                    <img src="images/members/chinmay.png" alt="Chinmay Chiplunkar" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">Chinmay Chiplunkar</h3>
+                    <p class="text-xs text-neonCyan mt-1">Media Lead</p>
+                </div>
+                <div class="bg-cyberCard border border-slate-800 rounded-xl p-5 text-center">
+                    <img src="images/members/payal.png" alt="Payal Hasbe" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">Payal Hasbe</h3>
+                    <p class="text-xs text-neonCyan mt-1">Media Lead</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            <div>
+                <span class="font-bold text-slate-200">IOTECH</span><span class="italic"> — Something Starts Here.</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://www.instagram.com/iotech_sigce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-neonCyan flex items-center space-x-1 border border-slate-800 rounded-full px-3 py-1 bg-slate-900">
+                    <i class="fa-brands fa-instagram text-neonCyan"></i>
+                    <span>@iotech.club</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Navigation Script -->
+    <script>
+        function switchPage(pageId) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(p => p.classList.add('hidden'));
+
+            const targetPage = document.getElementById(`page-${pageId}`);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.classList.remove('text-neonCyan', 'bg-slate-800');
+                btn.classList.add('text-slate-300');
+            });
+
+            const activeBtn = document.getElementById(`nav-${pageId}`);
+            if (activeBtn) {
+                activeBtn.classList.add('text-neonCyan', 'bg-slate-800');
+                activeBtn.classList.remove('text-slate-300');
+            }
+
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) mobileMenu.classList.add('hidden');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.toggle('hidden');
+        }
+
+        function scrollToDepartments() {
+            const deptSection = document.getElementById('departments-section');
+            if (deptSection) deptSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToCoreTeam() {
+            const coreSection = document.getElementById('core-team-section');
+            if (coreSection) coreSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            switchPage('home');
+        });
+    </script>
+</body>
+</html>
