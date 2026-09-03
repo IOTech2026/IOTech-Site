@@ -1,0 +1,75 @@
+/* ==========================================================================
+   IOTECH Club - Custom Dark Cyber Styling
+   ========================================================================== */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #080d1a;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #00f2fe;
+}
+
+/* Neon Glow Utilities */
+.neon-glow-cyan {
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+}
+.neon-glow-cyan:hover {
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.5);
+}
+
+.neon-border-glow {
+    position: relative;
+}
+.neon-border-glow::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(45deg, #00f2fe, #4facfe, transparent, transparent);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+.neon-border-glow:hover::after {
+    opacity: 1;
+}
+
+/* Smooth Fade Animations */
+.animate-fade-in {
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Live Editable Focus Outline Styling */
+[contenteditable="true"]:focus {
+    outline: 2px dashed #00f2fe !important;
+    outline-offset: 4px;
+    background-color: rgba(15, 23, 42, 0.8);
+    border-radius: 4px;
+}
+
+/* Custom Card Hover Scale */
+.card-hover-effect {
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover-effect:hover {
+    transform: translateY(-4px);
+}

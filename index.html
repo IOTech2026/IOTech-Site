@@ -23,30 +23,39 @@
     </script>
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-cyberDark text-slate-100 font-sans min-h-screen flex flex-col selection:bg-neonCyan selection:text-black">
+<body class="site-shell bg-cyberDark text-slate-100 font-sans min-h-screen flex flex-col selection:bg-neonCyan selection:text-black">
 
     <!-- Top College Banner -->
-    <header class="bg-white py-2 px-4 shadow-md text-center border-b border-gray-200">
+    <header class="college-banner bg-white py-2 px-4 shadow-md text-center border-b border-gray-200">
         <div class="max-w-7xl mx-auto flex items-center justify-center">
             <!-- COLLEGE BANNER -->
-            <img src="images/college-banner.png" alt="Smt. Indira Gandhi College of Engineering" class="h-16 md:h-20 object-contain mx-auto">
+            <img src="" data-image-src="assets/images/college-banner.png" alt="Smt. Indira Gandhi College of Engineering" class="h-16 md:h-20 object-contain mx-auto">
+            <div class="college-lockup">
+                <strong>Smt. Indira Gandhi College of Engineering</strong>
+                <span>IOTECH Student Club</span>
+            </div>
         </div>
     </header>
 
     <!-- Main Dynamic Navigation Bar -->
-    <nav class="sticky top-0 z-50 bg-cyberDark/90 backdrop-blur-md border-b border-slate-800">
+    <nav id="site-nav" class="sticky top-0 z-50 bg-cyberDark/90 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 
                 <!-- Logo & Brand in Navigation Bar -->
                 <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
-                    <img src="images/logo.png" alt="IOTECH Logo" class="h-20 w-100 object-contain">
+                    <img src="" data-image-src="assets/images/logo.png" alt="IOTECH Logo" class="h-20 w-100 object-contain">
+                    <div class="nav-wordmark">
+                        <strong>IOTECH</strong>
+                        <span>Minds in Motion</span>
+                    </div>
                 </div>
 
                 <!-- Desktop Navigation Bar -->
-                <div class="hidden md:flex space-x-1">
+                <div class="nav-actions hidden md:flex space-x-1">
                     <button onclick="switchPage('home')" id="nav-home" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all">Home</button>
                     <button onclick="switchPage('events')" id="nav-events" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all">Events</button>
                     <button onclick="switchPage('technical')" id="nav-technical" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all">Technical</button>
@@ -95,6 +104,53 @@
                     <button onclick="scrollToDepartments()" class="px-6 py-3 rounded-full bg-gradient-to-r from-neonCyan to-neonBlue text-cyberDark font-bold hover:shadow-[0_0_20px_rgba(0,242,254,0.4)] transition-all">Explore Departments</button>
                     <button onclick="scrollToCoreTeam()" class="px-6 py-3 rounded-full border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-200 font-semibold transition-all">Meet the Team</button>
                 </div>
+                <div class="hero-stats grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto mt-10">
+                    <div>
+                        <strong>5</strong>
+                        <span>Departments</span>
+                    </div>
+                    <div>
+                        <strong>12+</strong>
+                        <span>Core Members</span>
+                    </div>
+                    <div>
+                        <strong>IoT</strong>
+                        <span>Project Focus</span>
+                    </div>
+                    <div>
+                        <strong>2026</strong>
+                        <span>Active Team</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modern Club Snapshot -->
+            <div class="club-snapshot">
+                <div class="section-kicker">What we do</div>
+                <div class="section-heading-row">
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight text-white mb-2">Build, manage, document, and ship together.</h2>
+                        <p class="text-slate-400 max-w-2xl">IOTECH works like a student product studio: technical teams prototype, design shapes the experience, media tells the story, and management keeps every event moving.</p>
+                    </div>
+                    <button onclick="switchPage('events')" class="px-5 py-2.5 rounded-full border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-200 text-sm font-semibold transition-all">See Events</button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <article class="feature-card">
+                        <i class="fa-solid fa-microchip"></i>
+                        <h3>Hardware to Cloud</h3>
+                        <p>Hands-on IoT builds, sensors, embedded systems, dashboards, and campus-ready prototypes.</p>
+                    </article>
+                    <article class="feature-card">
+                        <i class="fa-solid fa-people-group"></i>
+                        <h3>Student-Led Teams</h3>
+                        <p>Clear roles across tech, design, media, documentation, and management for real collaboration.</p>
+                    </article>
+                    <article class="feature-card">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <h3>Events That Feel Alive</h3>
+                        <p>Debates, orientations, workshops, showcases, and campaigns planned with a polished system.</p>
+                    </article>
+                </div>
             </div>
 
             <!-- Core Team Section -->
@@ -105,84 +161,84 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">                
-                        <img src="images/members/charan.png" alt="Charan R. Shetty" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/charan.png" alt="Charan R. Shetty" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="https://www.linkedin.com/in/charan-ramesh-shetty/" class="hover:text-neonCyan transition-colors">Charan R. Shetty</a>
                         </h3>
                         <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">President</p>
                     </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/kedar.png" alt="Kedar Guruv" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/kedar.png" alt="Kedar Guruv" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="https://www.linkedin.com/in/kedar-gurav-166424229/" class="hover:text-neonCyan transition-colors">Kedar Guruv</a>
                         </h3>
                         <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Vice President</p>
                     </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/ult boss.png" alt="Parth M. Narse" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
-                        <h3 class="text-lg font-bold text-white">
-                        <a href="https://www.linkedin.com/in/parthnarse/" class="hover:text-neonCyan transition-colors">Parth M. Narse</a>
-                        </h3>
-                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Technical Lead</p>
-                    </div>
-                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/kshitija.png" alt="Kshitija Khilari" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/kshitija.png" alt="Kshitija Khilari" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="https://www.linkedin.com/in/kshitija-sandip-khilari/" class="hover:text-neonCyan transition-colors">Kshitija Khilari</a>
                         </h3>
                         <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Technical Lead</p>
                     </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/nidhee.png" alt="Nidhee Jadhav" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/ult boss.png" alt="Parth Narse" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <h3 class="text-lg font-bold text-white">
+                        <a href="https://www.linkedin.com/in/parthnarse/" class="hover:text-neonCyan transition-colors">Parth Narse</a>
+                        </h3>
+                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Technical Lead</p>
+                    </div>
+                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                        <img src="" data-image-src="assets/images/members/nidhee.png" alt="Nidhee Jadhav" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="https://www.linkedin.com/in/nidhee-jadhav-800520300/" class="hover:text-neonCyan transition-colors">Nidhee Jadhav</a>
                         </h3>
                         <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Management Lead</p>
                     </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/bhagyesh.png" alt="Bhagyesh Joshi" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/bhagyesh.png" alt="Bhagyesh Joshi" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="" class="hover:text-neonCyan transition-colors">Bhagyesh Joshi</a>
                         </h3>
                         <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Management Co-Lead</p>
                     </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/chinmay.png" alt="Chinmay Chiplunkar" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/chinmay.png" alt="Chinmay Chiplunkar" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="https://www.linkedin.com/in/chinmay-chiplunkar-23811136a/" class="hover:text-neonCyan transition-colors">Chinmay Chiplunkar</a>
                         </h3>
                         <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Media Lead</p>
                     </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/payal.png" alt="Payal Hasbe" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/payal.png" alt="Payal Hasbe" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="https://www.linkedin.com/in/payal-hasbe-b489a5363/" class="hover:text-neonCyan transition-colors">Payal Hasbe</a>
                         </h3>
                         <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Media Lead</p>
                     </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="aditya.jpg" alt="Aditya Shirke" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/aditya.jpg" alt="Aditya Shirke" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="https://www.linkedin.com/in/aditya-shirke-15bb8037a/" class="hover:text-neonCyan transition-colors">Aditya Shirke</a>
                         </h3>
                         <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Documentation Lead</p>
                     </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/anushka.png" alt="Anushka Sonawane" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/anushka.png" alt="Anushka Sonawane" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="" class="hover:text-neonCyan transition-colors">Anushka Sonawane</a>
                         </h3>
                         <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Documentation Co-Lead</p>
                     </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/komal.png" alt="Komal Shrike" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/komal.png" alt="Komal Shrike" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="https://www.linkedin.com/in/komal-shirke-611a87385/" class="hover:text-neonCyan transition-colors">Komal Shrike</a>
                         </h3>
                         <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Design Lead</p>
                     </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/purva.png" alt="Purva Agiter" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/purva.png" alt="Purva Agiter" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="https://www.linkedin.com/in/purva-atigre-4a76a0376/" class="hover:text-neonCyan transition-colors">Purva Agiter</a>
                         </h3>
@@ -199,14 +255,14 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/HOD.jpg" alt="Dr. Madhu Nashipudi" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/HOD.jpg" alt="Dr. Madhu Nashipudi" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="https://www.linkedin.com/in/dr-madhu-nashipudi-b52307310/" class="hover:text-neonCyan transition-colors">Dr. Madhu Nashipudi</a>
                         </h3>
                         <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">HOD Of IOT</p>
                     </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/sarita.jpg" alt="Sarita Bopalkar" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
+                        <img src="" data-image-src="assets/images/members/sarita.jpg" alt="Sarita Bopalkar" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
                         <h3 class="text-lg font-bold text-white">
                         <a href="https://www.linkedin.com/in/sarita-bopalkar-632b6b20/" class="hover:text-neonCyan transition-colors">Mrs. Sarita M. Bopalkar</a>
                         </h3>
@@ -261,6 +317,18 @@
                         <p class="text-slate-400 text-sm">Visual identity, UI/UX conceptualization, posters, and creative assets.</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Club CTA -->
+            <div class="join-strip">
+                <div>
+                    <span class="section-kicker">Join the momentum</span>
+                    <h2>Ready to build with IOTECH?</h2>
+                    <p>Explore a department, meet the leads, and be part of the next workshop, debate, project, or media campaign.</p>
+                </div>
+                <a href="https://www.instagram.com/iotech_sigce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="px-6 py-3 rounded-full bg-gradient-to-r from-neonCyan to-neonBlue text-cyberDark font-bold transition-all flex items-center gap-2">
+                    <i class="fa-brands fa-instagram"></i> Follow IOTECH
+                </a>
             </div>
         </section>
 
@@ -345,12 +413,12 @@
             <h2 class="text-xl font-bold text-neonCyan">Department Team</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                    <img src="images/members/nidhee.png" alt="Nidhee S. Jadhav" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <img src="" data-image-src="assets/images/members/nidhee.png" alt="Nidhee S. Jadhav" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
                     <h3 class="font-bold text-white">Nidhee S. Jadhav</h3>
                     <p class="text-xs text-neonCyan mt-1">Management Lead</p>
                 </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">                
-                    <img src="images/members/bhagyesh.png" alt="Bhagyesh Joshi" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <img src="" data-image-src="assets/images/members/bhagyesh.png" alt="Bhagyesh Joshi" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
                     <h3 class="font-bold text-white">Bhagyesh Joshi</h3>
                     <p class="text-xs text-neonCyan mt-1">Management Co-Lead</p>
                 </div>
@@ -365,16 +433,17 @@
             </div>
 
             <h2 class="text-xl font-bold text-neonCyan">Department Team</h2>
-            <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                        <img src="images/members/ult boss.png" alt="Parth M. Narse" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover border-2 border-slate-700 group-hover:border-neonCyan transition-all shadow-md">
-                        <h3 class="text-lg font-bold text-white">
-                        <a href="https://www.linkedin.com/in/parthnarse/" class="hover:text-neonCyan transition-colors">Parth M. Narse</a>
-                        </h3>
-                        <p class="text-xs font-semibold text-neonCyan uppercase tracking-wider mt-1">Technical Lead</p>
-                    </div>
-                    <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">                
-                    <img src="images/members/kshitija.png" alt="Kshitija Khilari" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                    <img src="" data-image-src="assets/images/members/kshitija.png" alt="Kshitija Khilari" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
                     <h3 class="font-bold text-white">Kshitija Khilari</h3>
+                    <p class="text-xs text-neonCyan mt-1">Technical Lead</p>
+                </div>
+                <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
+                    <img src="" data-image-src="assets/images/members/ult boss.png" alt="Parth M. Narse" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">
+                        <a href="https://www.linkedin.com/in/parthnarse/" class="hover:text-neonCyan transition-colors">Parth M. Narse</a>
+                    </h3>
                     <p class="text-xs text-neonCyan mt-1">Technical Lead</p>
                 </div>
             </div>
@@ -390,12 +459,12 @@
             <h2 class="text-xl font-bold text-neonCyan">Department Team</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                    <img src="images/members/komal.png" alt="Komal Shrike" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <img src="" data-image-src="assets/images/members/komal.png" alt="Komal Shrike" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
                     <h3 class="font-bold text-white">Komal Shrike</h3>
                     <p class="text-xs text-neonCyan mt-1">Design Lead</p>
                 </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">                
-                    <img src="images/members/purva.png" alt="Purva Atigre" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <img src="" data-image-src="assets/images/members/purva.png" alt="Purva Atigre" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
                     <h3 class="font-bold text-white">Purva Atigre</h3>
                     <p class="text-xs text-neonCyan mt-1">Design Co-Lead</p>
                 </div>
@@ -412,13 +481,13 @@
             <h2 class="text-xl font-bold text-neonCyan">Department Team</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                    <img src="images/members/aditya.png" alt="Aditya N. Shrike" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
-                    <h3 class="font-bold text-white">Aditya N. Shrike</h3>
+                    <img src="" data-image-src="assets/images/members/aditya.png" alt="Aditya N. Shrike" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">Aditya Shrike</h3>
                     <p class="text-xs text-neonCyan mt-1">Documentation Lead</p>
                 </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">                
-                    <img src="images/members/anushka.png" alt="Anushka Kulkarni" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
-                    <h3 class="font-bold text-white">Anushka Kulkarni</h3>
+                    <img src="" data-image-src="assets/images/members/anushka.png" alt="Anushka Sonavane" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <h3 class="font-bold text-white">Anushka Sonavane</h3>
                     <p class="text-xs text-neonCyan mt-1">Documentation Co-Lead</p>
                 </div>
             </div>
@@ -434,12 +503,12 @@
             <h2 class="text-xl font-bold text-neonCyan">Department Team</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">
-                    <img src="images/members/chinmay.png" alt="Chinmay Chiplunkar" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <img src="" data-image-src="assets/images/members/chinmay.png" alt="Chinmay Chiplunkar" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
                     <h3 class="font-bold text-white">Chinmay Chiplunkar</h3>
                     <p class="text-xs text-neonCyan mt-1">Media Lead</p>
                 </div>
                     <div class="bg-cyberCard border border-slate-800 rounded-2xl p-6 text-center hover:border-neonCyan/50 transition-all group">                
-                    <img src="images/members/payal.png" alt="Payal Hasbe" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
+                    <img src="" data-image-src="assets/images/members/payal.png" alt="Payal Hasbe" class="w-24 h-24 mx-auto mb-3 rounded-full object-cover border-2 border-slate-700">
                     <h3 class="font-bold text-white">Payal Hasbe</h3>
                     <p class="text-xs text-neonCyan mt-1">Media Lead</p>
                 </div>
@@ -472,6 +541,7 @@
             const targetPage = document.getElementById(`page-${pageId}`);
             if (targetPage) {
                 targetPage.classList.remove('hidden');
+                targetPage.classList.add('animate-fade-in');
             }
 
             const navButtons = document.querySelectorAll('.nav-btn');
@@ -507,8 +577,30 @@
             if (coreSection) coreSection.scrollIntoView({ behavior: 'smooth' });
         }
 
+        function createImageSlot(img) {
+            const fallback = document.createElement('div');
+            fallback.className = img.className + ' image-slot';
+            fallback.setAttribute('aria-label', img.getAttribute('alt') || 'Image slot');
+            fallback.setAttribute('title', img.dataset.imageSrc || 'Add image source here');
+            img.replaceWith(fallback);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             switchPage('home');
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', () => createImageSlot(img), { once: true });
+                if (!img.getAttribute('src')) {
+                    createImageSlot(img);
+                    return;
+                }
+                if (img.complete && img.naturalWidth === 0) createImageSlot(img);
+            });
+            const nav = document.getElementById('site-nav');
+            const setNavState = () => {
+                if (nav) nav.classList.toggle('is-scrolled', window.scrollY > 8);
+            };
+            setNavState();
+            window.addEventListener('scroll', setNavState, { passive: true });
         });
     </script>
 </body>
