@@ -769,9 +769,9 @@ const events = {
         description:
             "IOTECH Club presents Tech Clash 2026 — an inter-departmental debate competition designed to test your critical thinking, technical knowledge, and persuasion skills.",
 
-        date: "25th August 202",
+        date: "To Be Announced",
 
-        venue: "3rd Floor Seminar Hall, SIGCE Campus",
+        venue: "Seminar Hall, SIGCE Campus",
 
         register:
             "https://docs.google.com/forms/d/e/1FAIpQLScoLlzsMdnrZlsVusE9nBdiqPuaXINfKH1R69LPa6ILFr8e4A/viewform?usp=sharing&ouid=116021410510104350096"
@@ -784,14 +784,14 @@ const events = {
         name: "Java Quiz",
 
         description:
-            "IOTech Club presents a Java Quiz for curious minds ready to test their knowledge, sharpen their logic, and take on a challenge beyond the basics. Prove your Java knowledge, and see how well you really know Java. \nSyllabus: Programming in Java NPTEL assignment questions and Java concepts covered in class.",
+            "IOTech Club presents an exciting MCQ-based Java Quiz designed to test your understanding of Java programming concepts, classroom topics, and NPTEL concepts.",
 
         date: "To Be Announced",
 
         venue: "To Be Announced",
 
         register:
-            "https://docs.google.com/forms/d/e/1FAIpQLSdOyAX6XvTc4hWpJinL38R4MWDloyQw7y_JE52uHaZ-YtB5aA/viewform?usp=header"
+            "PASTE_JAVA_QUIZ_FORM_LINK_HERE"
 
     }
 
@@ -816,15 +816,30 @@ function openEvent(eventId) {
         document.getElementById("event-details");
 
 
-    /* Hide cards */
+    /*
+    ==========================================
+        HIDE EVENTS PAGE
+    ==========================================
+    */
+
     eventsList.classList.add("hidden");
 
 
-    /* Show details */
+    /*
+    ==========================================
+        SHOW DEDICATED EVENT PAGE
+    ==========================================
+    */
+
     eventDetails.classList.remove("hidden");
 
 
-    /* Insert event information */
+    /*
+    ==========================================
+        LOAD EVENT INFORMATION
+    ==========================================
+    */
+
     document.getElementById("event-name").textContent =
         event.name;
 
@@ -838,7 +853,12 @@ function openEvent(eventId) {
         event.venue;
 
 
-    /* Register button */
+    /*
+    ==========================================
+        REGISTER BUTTON
+    ==========================================
+    */
+
     const registerButton =
         document.getElementById("event-register");
 
@@ -860,10 +880,15 @@ function openEvent(eventId) {
     }
 
 
-    /* Scroll to event page */
-    document.getElementById("page-events").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+    /*
+    ==========================================
+        GO TO TOP OF PAGE
+    ==========================================
+    */
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
 
 }
@@ -872,25 +897,42 @@ function openEvent(eventId) {
 
 function closeEvent() {
 
+    /*
+    ==========================================
+        HIDE EVENT PAGE
+    ==========================================
+    */
+
     document
         .getElementById("event-details")
         .classList.add("hidden");
 
+
+    /*
+    ==========================================
+        SHOW EVENTS PAGE
+    ==========================================
+    */
 
     document
         .getElementById("events-list")
         .classList.remove("hidden");
 
 
-    document.getElementById("page-events").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+    /*
+    ==========================================
+        GO BACK TO TOP
+    ==========================================
+    */
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
 
 }
 
 </script>
-
         <!-- ================= MANAGEMENT PAGE ================= -->
         <section id="page-management" class="page-content hidden space-y-8">
             <div class="border-b border-slate-800 pb-6">
