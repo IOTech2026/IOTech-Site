@@ -799,7 +799,6 @@ const events = {
 };
 
 
-
 function openEvent(eventId) {
 
     const event = events[eventId];
@@ -817,30 +816,15 @@ function openEvent(eventId) {
         document.getElementById("event-details");
 
 
-    /*
-    ==========================================
-        HIDE EVENTS PAGE
-    ==========================================
-    */
-
+    // Hide event cards
     eventsList.classList.add("hidden");
 
 
-    /*
-    ==========================================
-        SHOW DEDICATED EVENT PAGE
-    ==========================================
-    */
-
+    // Show event details
     eventDetails.classList.remove("hidden");
 
 
-    /*
-    ==========================================
-        LOAD EVENT INFORMATION
-    ==========================================
-    */
-
+    // Insert event information
     document.getElementById("event-name").textContent =
         event.name;
 
@@ -854,12 +838,7 @@ function openEvent(eventId) {
         event.venue;
 
 
-    /*
-    ==========================================
-        REGISTER BUTTON
-    ==========================================
-    */
-
+    // Register button
     const registerButton =
         document.getElementById("event-register");
 
@@ -882,53 +861,39 @@ function openEvent(eventId) {
 
 
     /*
-    ==========================================
-        GO TO TOP OF PAGE
-    ==========================================
-    */
+     * Scroll to the Events section.
+     * The navbar remains visible.
+     */
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+    document.getElementById("page-events").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
     });
 
 }
 
 
-
 function closeEvent() {
 
-    /*
-    ==========================================
-        HIDE EVENT PAGE
-    ==========================================
-    */
+    const eventsList =
+        document.getElementById("events-list");
 
-    document
-        .getElementById("event-details")
-        .classList.add("hidden");
+    const eventDetails =
+        document.getElementById("event-details");
 
 
-    /*
-    ==========================================
-        SHOW EVENTS PAGE
-    ==========================================
-    */
-
-    document
-        .getElementById("events-list")
-        .classList.remove("hidden");
+    // Hide event details
+    eventDetails.classList.add("hidden");
 
 
-    /*
-    ==========================================
-        GO BACK TO TOP
-    ==========================================
-    */
+    // Show event cards
+    eventsList.classList.remove("hidden");
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+
+    // Go back to Events
+    document.getElementById("page-events").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
     });
 
 }
