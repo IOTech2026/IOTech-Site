@@ -325,25 +325,773 @@
         </section>
 
         <!-- ================= EVENTS PAGE ================= -->
-        <section id="page-events" class="page-content hidden space-y-12">
-            <!-- Header Banner -->
-            <div class="relative bg-gradient-to-r from-slate-900 via-cyberCard to-slate-900 border border-slate-800 rounded-3xl p-8 overflow-hidden">
-                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-neonCyan/10 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative z-10">
-                    <div>
-                        <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-neonCyan bg-neonCyan/10 border border-neonCyan/30 px-3 py-1 rounded-full mb-3">
-                            <i class="fa-solid fa-fire text-amber-400"></i> Flagship Event
-                        </span>
-                        <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Tech Clash: The Tech Debate</h1>
-                        <p class="text-slate-400 mt-2 max-w-xl text-sm md:text-base">
-                            Clash of ideas, tech ethics, and future innovations. Voice your arguments!
-                        </p>
-                    </div>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScoLlzsMdnrZlsVusE9nBdiqPuaXINfKH1R69LPa6ILFr8e4A/viewform?usp=sharing&ouid=116021410510104350096" target="_blank" class="px-6 py-3 rounded-full bg-gradient-to-r from-neonCyan to-neonBlue text-cyberDark font-bold hover:shadow-[0_0_20px_rgba(0,242,254,0.4)] transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-pen-to-square"></i> Register Now
-                    </a>
+        ```html
+<!-- ========================================================= -->
+<!-- EVENT DETAILS PAGE -->
+<!-- ========================================================= -->
+
+<section id="event-tech-debate"
+         class="page-content hidden space-y-10">
+
+    <!-- Back to Events -->
+    <button onclick="showPage('page-events')"
+            class="flex items-center gap-2
+                   text-slate-400
+                   hover:text-neonCyan
+                   transition">
+
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Events
+
+    </button>
+
+
+    <!-- ===================================================== -->
+    <!-- EVENT HEADER -->
+    <!-- ===================================================== -->
+
+    <div class="relative overflow-hidden
+                bg-gradient-to-br
+                from-slate-900
+                via-cyberCard
+                to-cyan-950/30
+                border border-slate-800
+                rounded-3xl
+                p-8 md:p-12">
+
+        <!-- Background Glow -->
+        <div class="absolute
+                    -right-20
+                    -top-20
+                    w-72 h-72
+                    bg-neonCyan/10
+                    rounded-full
+                    blur-3xl">
+        </div>
+
+
+        <div class="relative z-10">
+
+            <!-- Status -->
+            <span class="inline-flex
+                         items-center
+                         gap-2
+                         px-3 py-1
+                         rounded-full
+                         text-xs
+                         font-bold
+                         uppercase
+                         tracking-widest
+                         text-neonCyan
+                         bg-neonCyan/10
+                         border border-neonCyan/30">
+
+                <span class="w-2 h-2
+                             rounded-full
+                             bg-neonCyan
+                             animate-pulse">
+                </span>
+
+                Upcoming Event
+
+            </span>
+
+
+            <!-- Title -->
+            <h1 class="text-4xl
+                       md:text-6xl
+                       font-extrabold
+                       text-white
+                       tracking-tight
+                       mt-5">
+
+                Tech Clash:
+                <span class="text-neonCyan">
+                    The Tech Debate
+                </span>
+
+            </h1>
+
+
+            <!-- Short Description -->
+            <p class="text-slate-400
+                      text-lg
+                      max-w-2xl
+                      leading-relaxed
+                      mt-5">
+
+                Clash of ideas, challenge perspectives,
+                and defend your stand on the technology
+                shaping our future.
+
+            </p>
+
+
+            <!-- Register -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScoLlzsMdnrZlsVusE9nBdiqPuaXINfKH1R69LPa6ILFr8e4A/viewform?usp=sharing&ouid=116021410510104350096"
+               target="_blank"
+               class="inline-flex
+                      items-center
+                      gap-2
+                      mt-7
+                      px-6 py-3
+                      rounded-full
+                      bg-gradient-to-r
+                      from-neonCyan
+                      to-neonBlue
+                      text-cyberDark
+                      font-bold
+                      hover:shadow-[0_0_20px_rgba(0,242,254,0.4)]
+                      transition">
+
+                <i class="fa-solid fa-pen-to-square"></i>
+                Register Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- EVENT INFORMATION -->
+    <!-- ===================================================== -->
+
+    <div class="grid
+                grid-cols-1
+                sm:grid-cols-2
+                lg:grid-cols-4
+                gap-4">
+
+
+        <!-- DATE -->
+        <div class="bg-cyberCard
+                    border border-slate-800
+                    rounded-2xl
+                    p-5">
+
+            <i class="fa-regular fa-calendar
+                      text-neonCyan
+                      text-xl">
+            </i>
+
+            <p class="text-xs
+                      text-slate-500
+                      uppercase
+                      tracking-widest
+                      font-bold
+                      mt-4">
+
+                Date
+
+            </p>
+
+            <p class="text-white
+                      font-semibold
+                      mt-1">
+
+                Coming Soon
+
+            </p>
+
+        </div>
+
+
+        <!-- TIME -->
+        <div class="bg-cyberCard
+                    border border-slate-800
+                    rounded-2xl
+                    p-5">
+
+            <i class="fa-regular fa-clock
+                      text-neonCyan
+                      text-xl">
+            </i>
+
+            <p class="text-xs
+                      text-slate-500
+                      uppercase
+                      tracking-widest
+                      font-bold
+                      mt-4">
+
+                Time
+
+            </p>
+
+            <p class="text-white
+                      font-semibold
+                      mt-1">
+
+                To Be Announced
+
+            </p>
+
+        </div>
+
+
+        <!-- VENUE -->
+        <div class="bg-cyberCard
+                    border border-slate-800
+                    rounded-2xl
+                    p-5">
+
+            <i class="fa-solid fa-location-dot
+                      text-neonCyan
+                      text-xl">
+            </i>
+
+            <p class="text-xs
+                      text-slate-500
+                      uppercase
+                      tracking-widest
+                      font-bold
+                      mt-4">
+
+                Venue
+
+            </p>
+
+            <p class="text-white
+                      font-semibold
+                      mt-1">
+
+                To Be Announced
+
+            </p>
+
+        </div>
+
+
+        <!-- PARTICIPATION -->
+        <div class="bg-cyberCard
+                    border border-slate-800
+                    rounded-2xl
+                    p-5">
+
+            <i class="fa-solid fa-users
+                      text-neonCyan
+                      text-xl">
+            </i>
+
+            <p class="text-xs
+                      text-slate-500
+                      uppercase
+                      tracking-widest
+                      font-bold
+                      mt-4">
+
+                Participation
+
+            </p>
+
+            <p class="text-white
+                      font-semibold
+                      mt-1">
+
+                Open to Students
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- ABOUT EVENT -->
+    <!-- ===================================================== -->
+
+    <div class="bg-cyberCard
+                border border-slate-800
+                rounded-3xl
+                p-7 md:p-9">
+
+        <span class="text-neonCyan
+                     text-xs
+                     font-bold
+                     uppercase
+                     tracking-widest">
+
+            About the Event
+
+        </span>
+
+        <h2 class="text-3xl
+                   font-bold
+                   text-white
+                   mt-2">
+
+            Where ideas collide.
+
+        </h2>
+
+        <div class="text-slate-400
+                    leading-7
+                    mt-5
+                    space-y-4">
+
+            <p>
+                Tech Clash: The Tech Debate is an IOTech Club
+                event designed for students who enjoy technology,
+                discussion and challenging conventional thinking.
+            </p>
+
+            <p>
+                Participants will go head-to-head on
+                thought-provoking technology topics, presenting
+                arguments, challenging opposing viewpoints and
+                defending their position.
+            </p>
+
+            <p>
+                The focus isn't simply on speaking. Participants
+                are expected to think critically, use factual
+                evidence and respond effectively when their ideas
+                are challenged.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- EVENT FORMAT -->
+    <!-- ===================================================== -->
+
+    <div>
+
+        <span class="text-neonCyan
+                     text-xs
+                     font-bold
+                     uppercase
+                     tracking-widest">
+
+            How It Works
+
+        </span>
+
+        <h2 class="text-3xl
+                   font-bold
+                   text-white
+                   mt-2
+                   mb-6">
+
+            Event Format
+
+        </h2>
+
+
+        <div class="grid
+                    md:grid-cols-3
+                    gap-5">
+
+
+            <!-- STEP 1 -->
+            <div class="bg-cyberCard
+                        border border-slate-800
+                        rounded-2xl
+                        p-6">
+
+                <div class="w-10 h-10
+                            rounded-full
+                            bg-neonCyan/10
+                            text-neonCyan
+                            flex items-center
+                            justify-center
+                            font-bold">
+
+                    01
+
                 </div>
+
+                <h3 class="text-xl
+                           font-bold
+                           text-white
+                           mt-5">
+
+                    Get Your Topic
+
+                </h3>
+
+                <p class="text-slate-400
+                          leading-6
+                          mt-3">
+
+                    Participants will receive their assigned
+                    debate topic and position.
+
+                </p>
+
             </div>
+
+
+            <!-- STEP 2 -->
+            <div class="bg-cyberCard
+                        border border-slate-800
+                        rounded-2xl
+                        p-6">
+
+                <div class="w-10 h-10
+                            rounded-full
+                            bg-neonCyan/10
+                            text-neonCyan
+                            flex items-center
+                            justify-center
+                            font-bold">
+
+                    02
+
+                </div>
+
+                <h3 class="text-xl
+                           font-bold
+                           text-white
+                           mt-5">
+
+                    Make Your Case
+
+                </h3>
+
+                <p class="text-slate-400
+                          leading-6
+                          mt-3">
+
+                    Present your arguments within the allotted
+                    time using facts and logical reasoning.
+
+                </p>
+
+            </div>
+
+
+            <!-- STEP 3 -->
+            <div class="bg-cyberCard
+                        border border-slate-800
+                        rounded-2xl
+                        p-6">
+
+                <div class="w-10 h-10
+                            rounded-full
+                            bg-neonCyan/10
+                            text-neonCyan
+                            flex items-center
+                            justify-center
+                            font-bold">
+
+                    03
+
+                </div>
+
+                <h3 class="text-xl
+                           font-bold
+                           text-white
+                           mt-5">
+
+                    Defend Your Stand
+
+                </h3>
+
+                <p class="text-slate-400
+                          leading-6
+                          mt-3">
+
+                    Respond to questions from opponents and
+                    judges while defending your viewpoint.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- RULES + TOPICS -->
+    <!-- ===================================================== -->
+
+    <div class="grid
+                lg:grid-cols-2
+                gap-8">
+
+
+        <!-- RULES -->
+        <div class="bg-cyberCard
+                    border border-slate-800
+                    rounded-3xl
+                    p-7">
+
+            <span class="text-neonCyan
+                         text-xs
+                         font-bold
+                         uppercase
+                         tracking-widest">
+
+                Important
+
+            </span>
+
+            <h2 class="text-3xl
+                       font-bold
+                       text-white
+                       mt-2">
+
+                Rules & Guidelines
+
+            </h2>
+
+
+            <ul class="mt-6 space-y-4">
+
+                <li class="flex gap-3 text-slate-400">
+                    <i class="fa-solid fa-check
+                              text-neonCyan
+                              mt-1">
+                    </i>
+
+                    Each participant gets 5 minutes per round.
+                </li>
+
+                <li class="flex gap-3 text-slate-400">
+                    <i class="fa-solid fa-check
+                              text-neonCyan
+                              mt-1">
+                    </i>
+
+                    Arguments must be supported by factual evidence.
+                </li>
+
+                <li class="flex gap-3 text-slate-400">
+                    <i class="fa-solid fa-check
+                              text-neonCyan
+                              mt-1">
+                    </i>
+
+                    No degrading or disrespectful language.
+                </li>
+
+                <li class="flex gap-3 text-slate-400">
+                    <i class="fa-solid fa-check
+                              text-neonCyan
+                              mt-1">
+                    </i>
+
+                    Participants must stay relevant to the assigned topic.
+                </li>
+
+                <li class="flex gap-3 text-slate-400">
+                    <i class="fa-solid fa-check
+                              text-neonCyan
+                              mt-1">
+                    </i>
+
+                    Judges may ask questions during the debate.
+                </li>
+
+                <li class="flex gap-3 text-slate-400">
+                    <i class="fa-solid fa-check
+                              text-neonCyan
+                              mt-1">
+                    </i>
+
+                    Judges' decision will be final.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- TOPICS -->
+        <div class="bg-cyberCard
+                    border border-slate-800
+                    rounded-3xl
+                    p-7">
+
+            <span class="text-neonCyan
+                         text-xs
+                         font-bold
+                         uppercase
+                         tracking-widest">
+
+                Debate
+
+            </span>
+
+            <h2 class="text-3xl
+                       font-bold
+                       text-white
+                       mt-2">
+
+                Topics
+
+            </h2>
+
+            <p class="text-slate-400
+                      mt-4">
+
+                Topics will revolve around technology,
+                innovation and their impact on society.
+
+            </p>
+
+
+            <div class="mt-6 space-y-3">
+
+                <div class="flex items-center gap-4
+                            p-4
+                            rounded-xl
+                            bg-slate-900/70
+                            border border-slate-800">
+
+                    <i class="fa-solid fa-microchip
+                              text-neonCyan">
+                    </i>
+
+                    <span class="text-slate-300">
+                        Artificial Intelligence
+                    </span>
+
+                </div>
+
+
+                <div class="flex items-center gap-4
+                            p-4
+                            rounded-xl
+                            bg-slate-900/70
+                            border border-slate-800">
+
+                    <i class="fa-solid fa-robot
+                              text-neonCyan">
+                    </i>
+
+                    <span class="text-slate-300">
+                        Automation & Jobs
+                    </span>
+
+                </div>
+
+
+                <div class="flex items-center gap-4
+                            p-4
+                            rounded-xl
+                            bg-slate-900/70
+                            border border-slate-800">
+
+                    <i class="fa-solid fa-shield-halved
+                              text-neonCyan">
+                    </i>
+
+                    <span class="text-slate-300">
+                        Privacy & Technology
+                    </span>
+
+                </div>
+
+
+                <div class="flex items-center gap-4
+                            p-4
+                            rounded-xl
+                            bg-slate-900/70
+                            border border-slate-800">
+
+                    <i class="fa-solid fa-globe
+                              text-neonCyan">
+                    </i>
+
+                    <span class="text-slate-300">
+                        Technology & Society
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- REGISTER SECTION -->
+    <!-- ===================================================== -->
+
+    <div class="relative
+                overflow-hidden
+                text-center
+                bg-gradient-to-br
+                from-cyan-950/40
+                via-slate-950
+                to-blue-950/30
+                border border-neonCyan/20
+                rounded-3xl
+                p-10 md:p-14">
+
+        <div class="relative z-10">
+
+            <i class="fa-solid fa-fire
+                      text-3xl
+                      text-neonCyan">
+            </i>
+
+            <h2 class="text-3xl
+                       md:text-4xl
+                       font-extrabold
+                       text-white
+                       mt-4">
+
+                Ready to take the stand?
+
+            </h2>
+
+            <p class="text-slate-400
+                      mt-3
+                      max-w-xl
+                      mx-auto">
+
+                Bring your ideas, back them with facts,
+                and make your argument count.
+
+            </p>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScoLlzsMdnrZlsVusE9nBdiqPuaXINfKH1R69LPa6ILFr8e4A/viewform?usp=sharing&ouid=116021410510104350096"
+               target="_blank"
+               class="inline-flex
+                      items-center
+                      gap-2
+                      mt-6
+                      px-7 py-3
+                      rounded-full
+                      bg-gradient-to-r
+                      from-neonCyan
+                      to-neonBlue
+                      text-cyberDark
+                      font-bold
+                      hover:shadow-[0_0_25px_rgba(0,242,254,0.4)]
+                      transition">
+
+                <i class="fa-solid fa-pen-to-square"></i>
+                Register Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+```
+
 
             <!-- Main Event Details Card -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
