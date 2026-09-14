@@ -361,185 +361,357 @@
 
 
         <!-- ================================= -->
-        <!--          EVENT CARD GRID           -->
-        <!-- ================================= -->
+<!--          EVENT CARDS               -->
+<!-- ================================= -->
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 gap-6">
 
-            <!-- ================================= -->
-            <!--            JAVA QUIZ CARD         -->
-            <!-- ================================= -->
+    <!-- ================================= -->
+    <!--            JAVA QUIZ               -->
+    <!-- ================================= -->
 
-            <div
-                onclick="openEvent('java-quiz')"
-                class="group cursor-pointer bg-cyberCard border border-slate-800
-                       rounded-2xl overflow-hidden
-                       hover:border-neonCyan/50
-                       hover:-translate-y-1
-                       transition-all duration-300"
-            >
+    <div class="group bg-cyberCard border border-slate-800
+                rounded-2xl p-6 md:p-8
+                hover:border-blue-400/50
+                hover:-translate-y-1
+                transition-all duration-300">
 
-                <!-- Banner -->
-                <div class="h-44 bg-gradient-to-br from-slate-900
-                            via-cyberCard to-blue-950
-                            relative overflow-hidden">
-
-                    <div class="absolute -right-10 -bottom-10
-                                w-40 h-40 bg-blue-500/10
-                                rounded-full blur-3xl">
-                    </div>
-
-                    <!-- Status -->
-                    <div class="absolute top-4 left-4">
-
-                        <span class="text-xs font-bold uppercase
-                                     tracking-wider text-blue-400
-                                     bg-blue-400/10
-                                     border border-blue-400/30
-                                     px-3 py-1 rounded-full">
-                            Upcoming
-                        </span>
-
-                    </div>
+        <!-- TOP ROW -->
+        <div class="flex flex-col md:flex-row
+                    md:items-center
+                    md:justify-between
+                    gap-4">
 
 
-                    <!-- Icon -->
-                    <div class="absolute inset-0 flex items-center justify-center">
+            <!-- EVENT NAME -->
+            <div class="flex items-center gap-4">
 
-                        <i class="fa-brands fa-java
-                                  text-6xl text-blue-400/60
-                                  group-hover:text-blue-400/80
-                                  group-hover:scale-110
-                                  transition-all duration-300">
-                        </i>
+                <div class="w-12 h-12 rounded-xl
+                            bg-blue-400/10
+                            border border-blue-400/20
+                            flex items-center justify-center
+                            shrink-0">
 
-                    </div>
+                    <i class="fa-brands fa-java
+                              text-blue-400 text-xl">
+                    </i>
 
                 </div>
 
 
-                <!-- Card Content -->
-                <div class="p-6">
+                <div>
 
-                    <h2 class="text-xl font-bold text-white
-                               group-hover:text-neonCyan transition">
+                    <span class="text-blue-400 text-xs
+                                 font-bold uppercase
+                                 tracking-widest">
+
+                        Upcoming Event
+
+                    </span>
+
+                    <h2 class="text-2xl md:text-3xl
+                               font-extrabold text-white
+                               mt-1
+                               group-hover:text-blue-400
+                               transition">
+
                         Java Quiz
+
                     </h2>
-
-                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                        Test your Java knowledge through an exciting
-                        MCQ-based quiz covering programming concepts
-                        and NPTEL topics.
-                    </p>
-
-
-                    <div class="flex items-center justify-between mt-6">
-
-                        <span class="text-xs text-slate-500">
-                            <i class="fa-solid fa-calendar-day mr-1"></i>
-                            Date TBA
-                        </span>
-
-                        <span class="text-neonCyan text-sm font-semibold
-                                     flex items-center gap-2">
-
-                            View Event
-
-                            <i class="fa-solid fa-arrow-right
-                                      group-hover:translate-x-1
-                                      transition">
-                            </i>
-
-                        </span>
-
-                    </div>
 
                 </div>
 
             </div>
-            <!-- ================================= -->
-            <!--          TECH CLASH CARD           -->
-            <!-- ================================= -->
 
-            <div
-                onclick="openEvent('tech-clash')"
-                class="group cursor-pointer bg-cyberCard border border-slate-800
-                       rounded-2xl overflow-hidden
-                       hover:border-neonCyan/50
-                       hover:-translate-y-1
-                       transition-all duration-300"
-            >
 
-                <!-- Banner -->
-                <div class="h-44 bg-gradient-to-br from-slate-900
-                            via-cyberCard to-cyan-950
-                            relative overflow-hidden">
+            <!-- REGISTER BUTTON -->
+            <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdOyAX6XvTc4hWpJinL38R4MWDloyQw7y_JE52uHaZ-YtB5aA/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center
+                       justify-center gap-2
+                       px-6 py-3
+                       rounded-full
+                       bg-gradient-to-r
+                       from-neonCyan to-neonBlue
+                       text-cyberDark
+                       font-bold
+                       whitespace-nowrap
+                       hover:shadow-[0_0_25px_rgba(0,242,254,0.4)]
+                       hover:-translate-y-0.5
+                       transition-all duration-300">
 
-                    <div class="absolute -right-10 -bottom-10
-                                w-40 h-40 bg-neonCyan/10
-                                rounded-full blur-3xl">
-                    </div>
+                <i class="fa-solid fa-pen-to-square"></i>
 
-                    <!-- Status -->
-                    <div class="absolute top-4 left-4">
-                        <span class="text-xs font-bold uppercase
-                                     tracking-wider text-neonCyan
-                                     bg-neonCyan/10
-                                     border border-neonCyan/30
-                                     px-3 py-1 rounded-full">
-                            Past Event
-                        </span>
-                    </div>
+                Register Now
 
-                    <!-- Icon -->
-                    <div class="absolute inset-0 flex items-center justify-center">
+            </a>
 
-                        <i class="fa-solid fa-comments
-                                  text-6xl text-neonCyan/60
-                                  group-hover:text-neonCyan/80
-                                  group-hover:scale-110
-                                  transition-all duration-300">
-                        </i>
+        </div>
 
-                    </div>
+
+        <!-- DESCRIPTION -->
+        <div class="mt-6">
+
+            <p class="text-slate-400
+                      text-sm md:text-base
+                      leading-relaxed
+                      max-w-4xl">
+
+                IOTech Club presents an exciting MCQ-based
+                Java Quiz designed to test your understanding
+                of Java programming concepts, classroom topics,
+                and NPTEL concepts.
+
+            </p>
+
+        </div>
+
+
+        <!-- DATE + VENUE -->
+        <div class="grid grid-cols-1 md:grid-cols-2
+                    gap-4
+                    mt-7 pt-6
+                    border-t border-slate-800">
+
+
+            <!-- DATE -->
+            <div class="flex items-center gap-3">
+
+                <div class="w-10 h-10 rounded-lg
+                            bg-blue-400/10
+                            text-blue-400
+                            flex items-center justify-center
+                            shrink-0">
+
+                    <i class="fa-solid fa-calendar-day"></i>
 
                 </div>
 
 
-                <!-- Card Content -->
-                <div class="p-6">
+                <div>
 
-                    <h2 class="text-xl font-bold text-white
-                               group-hover:text-neonCyan transition">
-                        Tech Clash 2026
-                    </h2>
+                    <p class="text-xs text-slate-500
+                              uppercase tracking-wider">
 
-                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                        An inter-departmental tech debate where ideas,
-                        technology and innovation take center stage.
+                        Date
+
                     </p>
 
+                    <p class="text-white font-semibold mt-1">
 
-                    <div class="flex items-center justify-between mt-6">
+                        To Be Announced
 
-                        <span class="text-xs text-slate-500">
-                            <i class="fa-solid fa-calendar-day mr-1"></i>
-                            Date TBA
-                        </span>
+                    </p>
 
-                        <span class="text-neonCyan text-sm font-semibold
-                                     flex items-center gap-2">
+                </div>
 
-                            View Event
+            </div>
 
-                            <i class="fa-solid fa-arrow-right
-                                      group-hover:translate-x-1
-                                      transition">
-                            </i>
 
-                        </span>
+            <!-- VENUE -->
+            <div class="flex items-center gap-3">
 
-                    </div>
+                <div class="w-10 h-10 rounded-lg
+                            bg-blue-400/10
+                            text-blue-400
+                            flex items-center justify-center
+                            shrink-0">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+
+                <div>
+
+                    <p class="text-xs text-slate-500
+                              uppercase tracking-wider">
+
+                        Venue
+
+                    </p>
+
+                    <p class="text-white font-semibold mt-1">
+
+                        To Be Announced
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+        <!-- ================================= -->
+    <!--          TECH CLASH               -->
+    <!-- ================================= -->
+
+    <div class="group bg-cyberCard border border-slate-800
+                rounded-2xl p-6 md:p-8
+                hover:border-neonCyan/50
+                hover:-translate-y-1
+                transition-all duration-300">
+
+        <!-- TOP ROW -->
+        <div class="flex flex-col md:flex-row
+                    md:items-center
+                    md:justify-between
+                    gap-4">
+
+            <!-- EVENT NAME -->
+            <div class="flex items-center gap-4">
+
+                <div class="w-12 h-12 rounded-xl
+                            bg-neonCyan/10
+                            border border-neonCyan/20
+                            flex items-center justify-center
+                            shrink-0">
+
+                    <i class="fa-solid fa-comments
+                              text-neonCyan text-xl">
+                    </i>
+
+                </div>
+
+                <div>
+
+                    <span class="text-neonCyan text-xs
+                                 font-bold uppercase
+                                 tracking-widest">
+                        Past Event
+                    </span>
+
+                    <h2 class="text-2xl md:text-3xl
+                               font-extrabold text-white
+                               mt-1
+                               group-hover:text-neonCyan
+                               transition">
+
+                        Tech Clash 2026
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- REGISTER BUTTON -->
+            <a
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center
+                       justify-center gap-2
+                       px-6 py-3
+                       rounded-full
+                       bg-gradient-to-r
+                       from-neonCyan to-neonBlue
+                       text-cyberDark
+                       font-bold
+                       whitespace-nowrap
+                       hover:shadow-[0_0_25px_rgba(0,242,254,0.4)]
+                       hover:-translate-y-0.5
+                       transition-all duration-300">
+
+                <i class="fa-solid fa-pen-to-square"></i>
+
+                Register Now
+
+            </a>
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+        <div class="mt-6">
+
+            <p class="text-slate-400
+                      text-sm md:text-base
+                      leading-relaxed
+                      max-w-4xl">
+
+                IOTECH Club presents Tech Clash 2026 —
+                an inter-departmental debate competition
+                designed to test your critical thinking,
+                technical knowledge, and persuasion skills.
+
+            </p>
+
+        </div>
+
+
+        <!-- DATE + VENUE -->
+        <div class="grid grid-cols-1 md:grid-cols-2
+                    gap-4
+                    mt-7 pt-6
+                    border-t border-slate-800">
+
+
+            <!-- DATE -->
+            <div class="flex items-center gap-3">
+
+                <div class="w-10 h-10 rounded-lg
+                            bg-neonCyan/10
+                            text-neonCyan
+                            flex items-center justify-center
+                            shrink-0">
+
+                    <i class="fa-solid fa-calendar-day"></i>
+
+                </div>
+
+                <div>
+
+                    <p class="text-xs text-slate-500
+                              uppercase tracking-wider">
+
+                        Date
+
+                    </p>
+
+                    <p class="text-white font-semibold mt-1">
+
+                        To Be Announced
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- VENUE -->
+            <div class="flex items-center gap-3">
+
+                <div class="w-10 h-10 rounded-lg
+                            bg-neonCyan/10
+                            text-neonCyan
+                            flex items-center justify-center
+                            shrink-0">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+                <div>
+
+                    <p class="text-xs text-slate-500
+                              uppercase tracking-wider">
+
+                        Venue
+
+                    </p>
+
+                    <p class="text-white font-semibold mt-1">
+
+                        Seminar Hall, SIGCE Campus
+
+                    </p>
 
                 </div>
 
@@ -549,6 +721,7 @@
 
     </div>
 
+</div>
 
 
     <!-- ================================= -->
@@ -752,153 +925,6 @@
     </div>
 
 </section>
-
-
-
-<!-- ================================= -->
-<!--          EVENT JAVASCRIPT          -->
-<!-- ================================= -->
-
-<script>
-
-const events = {
-
-    "tech-clash": {
-
-        name: "Tech Clash 2026",
-
-        description:
-            "IOTECH Club presents Tech Clash 2026 — an inter-departmental debate competition designed to test your critical thinking, technical knowledge, and persuasion skills.",
-
-        date: "To Be Announced",
-
-        venue: "Seminar Hall, SIGCE Campus",
-
-        register:
-            "https://docs.google.com/forms/d/e/1FAIpQLScoLlzsMdnrZlsVusE9nBdiqPuaXINfKH1R69LPa6ILFr8e4A/viewform?usp=sharing&ouid=116021410510104350096"
-
-    },
-
-
-    "java-quiz": {
-
-        name: "Java Quiz",
-
-        description:
-            "IOTech Club presents an exciting MCQ-based Java Quiz designed to test your understanding of Java programming concepts, classroom topics, and NPTEL concepts.",
-
-        date: "To Be Announced",
-
-        venue: "To Be Announced",
-
-        register:
-            "https://docs.google.com/forms/d/e/1FAIpQLSdOyAX6XvTc4hWpJinL38R4MWDloyQw7y_JE52uHaZ-YtB5aA/viewform?usp=header"
-
-    }
-
-};
-
-
-function openEvent(eventId) {
-
-    const event = events[eventId];
-
-    if (!event) {
-        console.error("Event not found:", eventId);
-        return;
-    }
-
-
-    const eventsList =
-        document.getElementById("events-list");
-
-    const eventDetails =
-        document.getElementById("event-details");
-
-
-    // Hide event cards
-    eventsList.classList.add("hidden");
-
-
-    // Show event details
-    eventDetails.classList.remove("hidden");
-
-
-    // Insert event information
-    document.getElementById("event-name").textContent =
-        event.name;
-
-    document.getElementById("event-description").textContent =
-        event.description;
-
-    document.getElementById("event-date").textContent =
-        event.date;
-
-    document.getElementById("event-venue").textContent =
-        event.venue;
-
-
-    // Register button
-    const registerButton =
-        document.getElementById("event-register");
-
-
-    if (
-        event.register &&
-        event.register !== "" &&
-        event.register !== "PASTE_JAVA_QUIZ_FORM_LINK_HERE"
-    ) {
-
-        registerButton.href = event.register;
-
-        registerButton.classList.remove("hidden");
-
-    } else {
-
-        registerButton.classList.add("hidden");
-
-    }
-
-
-    /*
-     * Scroll to the Events section.
-     * The navbar remains visible.
-     */
-
-    document.getElementById("page-events").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
-}
-
-
-function closeEvent() {
-
-    const eventsList =
-        document.getElementById("events-list");
-
-    const eventDetails =
-        document.getElementById("event-details");
-
-
-    // Hide event details
-    eventDetails.classList.add("hidden");
-
-
-    // Show event cards
-    eventsList.classList.remove("hidden");
-
-
-    // Go back to Events
-    document.getElementById("page-events").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
-}
-
-</script>
         <!-- ================= MANAGEMENT PAGE ================= -->
         <section id="page-management" class="page-content hidden space-y-8">
             <div class="border-b border-slate-800 pb-6">
